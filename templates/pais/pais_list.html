@@ -1,0 +1,31 @@
+{% block content %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>codigo postal</td>
+			<td>Nombre</td>
+			<td>Descripcion</td>
+			<td>Acciones</td>
+		</tr>
+	</thead>
+	<tbody>
+		{% if paises %}
+		{% for pais in paises %}
+		<tr>
+			<td>{{ pais.pai_id }}</td>
+			<td>{{ pais.pai_nom }}</td>
+			<td>{{ pais.pai_des }}</td>
+			<td>
+				<a href="{% url 'pais_editar' pais.pai_id%}">Editar</a>
+				<a href="{% url 'pais_eliminar' pais.pai_id%}">Eliminar</a>
+			</td>
+		</tr>
+		{% endfor %}
+		{% else %}
+		<h1>no hay registros de paises</h1>
+		{% endif %}
+	</tbody>
+</table>
+
+{% endblock %}

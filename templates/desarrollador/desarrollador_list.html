@@ -1,0 +1,32 @@
+{% block content %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>Cedula</td>
+			<td>Nombre</td>
+			<td>Apellido</td>
+			<td>Telefono</td>
+			<td>Correo</td>
+			<td>Pais de nacimiento</td>
+		</tr>
+	</thead>
+	<tbody>
+		{% if desarrolladores %}
+		{% for desarrollador in desarrolladores %}
+		<tr>
+			<td>{{ desarrollador.des_id }}</td>
+			<td>{{ desarrollador.des_nom }}</td>
+			<td>{{ desarrollador.des_ape }}</td>
+			<td>{{ desarrollador.des_tel }}</td>
+			<td>{{ desarrollador.des_email }}</td>
+			<td>{{ desarrollador.des_pai_id }}</td>
+		</tr>
+		{% endfor %}
+		{% else %}
+		<h1>no hay registros de desarrolladores</h1>
+		{% endif %}
+	</tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% block content %}
+<form method="post">
+	{% csrf_token %}
+	<h3>eliminar el registro {{pais.pai_id}}</h3>
+	<button type="submit">si, eliminar</button>
+	<a href="{% url 'pais_listar' %}">Cancelar</a>
+	
+</form>
+{% endblock %}
